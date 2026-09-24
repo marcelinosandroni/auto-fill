@@ -1,13 +1,25 @@
 @import "tailwindcss";
 
+/* Design Tokens - DESIGN.md */
 :root {
+  /* Colors */
+  --color-primary: #6366F1;
+  --color-secondary: #10B981;
+  --color-accent: #F59E0B;
+  --color-background: #0F172A;
+  --color-surface: #1E293B;
+  --color-text: #F8FAFC;
+  --color-muted: #94A3B8;
+  --color-danger: #EF4444;
+  
+  /* Typography */
   font-family: 'Inter', system-ui, sans-serif;
   color-scheme: dark;
 }
 
 body {
-  background-color: #020617;
-  color: #f8fafc;
+  background-color: var(--color-background);
+  color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;

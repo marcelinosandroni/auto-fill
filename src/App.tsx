@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import LandingPage from './features/landing/pages/LandingPage'
-import DocsApp from './apps/DocsApp'
+import LandingPage from '@/features/landing/pages/LandingPage'
+import DocsApp from '@/apps/DocsApp'
 
 function App() {
   return (

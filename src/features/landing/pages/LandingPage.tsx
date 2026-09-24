@@ -1,3 +1,4 @@
+import { Button, Card, Badge } from '@/components/ui'
 import { Shield, Bell, Zap, Lock, Mail, RefreshCw, Chrome, ArrowRight } from 'lucide-react'
 
 export default function LandingPage() {
@@ -18,10 +19,9 @@ export default function LandingPage() {
             {/* Left: Content */}
             <div className="text-center lg:text-left">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-8">
-                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-sm text-indigo-300">Chrome Extension</span>
-              </div>
+              <Badge variant="primary" dot className="mb-8">
+                Chrome Extension
+              </Badge>
               
               {/* Headline */}
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -39,14 +39,12 @@ export default function LandingPage() {
               
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-center gap-4 lg:justify-start justify-center">
-                <button className="group px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-lg shadow-indigo-500/20 transition-all flex items-center gap-3">
-                  <Chrome className="w-5 h-5" />
+                <Button size="lg" icon={<Chrome className="w-5 h-5" />} iconRight={<ArrowRight className="w-5 h-5" />}>
                   Instalar no Chrome
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="px-8 py-4 text-slate-300 hover:text-white font-semibold rounded-lg border border-slate-700 hover:border-slate-600 hover:bg-slate-800 transition-all">
+                </Button>
+                <Button variant="secondary" size="lg">
                   Ver como funciona
-                </button>
+                </Button>
               </div>
             </div>
             
@@ -57,23 +55,22 @@ export default function LandingPage() {
                 <div className="absolute inset-0 bg-indigo-500/20 rounded-2xl blur-2xl" />
                 
                 {/* Extension popup mockup */}
-                <div className="relative bg-slate-800 rounded-2xl border border-slate-700 shadow-2xl overflow-hidden">
+                <Card className="relative overflow-hidden">
                   {/* Header */}
-                  <div className="p-4 bg-gradient-to-r from-indigo-600 to-purple-600">
+                  <div className="p-4 bg-gradient-to-r from-indigo-600 to-purple-600 -m-6 mb-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <Shield className="w-6 h-6 text-white" />
                         <span className="font-bold text-white">AutoFill Guardian</span>
                       </div>
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                        <span className="text-xs text-emerald-200">Monitorando</span>
-                      </div>
+                      <Badge variant="success" dot size="sm">
+                        Monitorando
+                      </Badge>
                     </div>
                   </div>
                   
                   {/* Stats */}
-                  <div className="grid grid-cols-3 gap-px bg-slate-700">
+                  <div className="grid grid-cols-3 gap-px bg-slate-700 -mx-6 mb-4">
                     <div className="bg-slate-800 p-3 text-center">
                       <div className="text-lg font-bold text-indigo-400">12</div>
                       <div className="text-xs text-slate-400">Hoje</div>
@@ -89,7 +86,7 @@ export default function LandingPage() {
                   </div>
                   
                   {/* Captures */}
-                  <div className="p-3 space-y-2">
+                  <div className="space-y-2">
                     <div className="text-xs font-medium text-slate-400 mb-2">Últimas Capturas</div>
                     {[
                       { icon: '📧', from: 'Google', code: '••••••', time: '2 min', used: true },
@@ -111,15 +108,15 @@ export default function LandingPage() {
                   </div>
                   
                   {/* Footer */}
-                  <div className="p-3 border-t border-slate-700 flex items-center justify-between">
-                    <button className="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                  <div className="flex items-center justify-between pt-4 mt-4 border-t border-slate-700">
+                    <Button variant="ghost" size="sm">
                       ⚙️ Settings
-                    </button>
-                    <button className="px-3 py-1.5 text-xs font-medium bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors">
+                    </Button>
+                    <Button size="sm">
                       Dashboard
-                    </button>
+                    </Button>
                   </div>
-                </div>
+                </Card>
               </div>
             </div>
           </div>
@@ -136,7 +133,7 @@ export default function LandingPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Feature 1: Captura Inteligente */}
-            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
+            <Card hoverable>
               <div className="w-12 h-12 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Bell className="w-6 h-6 text-indigo-400" />
               </div>
@@ -144,10 +141,10 @@ export default function LandingPage() {
               <p className="text-slate-400">
                 Detecta códigos OTP em notificações, emails e clipboard automaticamente
               </p>
-            </div>
+            </Card>
             
             {/* Feature 2: Auto-Fill Instantâneo */}
-            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
+            <Card hoverable>
               <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Zap className="w-6 h-6 text-emerald-400" />
               </div>
@@ -155,10 +152,10 @@ export default function LandingPage() {
               <p className="text-slate-400">
                 Preenche campos de verificação na hora, sem você precisar copiar/colar
               </p>
-            </div>
+            </Card>
             
             {/* Feature 3: Histórico Seguro */}
-            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
+            <Card hoverable>
               <div className="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Shield className="w-6 h-6 text-cyan-400" />
               </div>
@@ -166,10 +163,10 @@ export default function LandingPage() {
               <p className="text-slate-400">
                 Veja todos os códigos capturados, mascarados por padrão
               </p>
-            </div>
+            </Card>
             
             {/* Feature 4: Multi-Source */}
-            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
+            <Card hoverable>
               <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Mail className="w-6 h-6 text-amber-400" />
               </div>
@@ -177,10 +174,10 @@ export default function LandingPage() {
               <p className="text-slate-400">
                 Gmail, Outlook, notificações do browser, clipboard — tudo em um lugar
               </p>
-            </div>
+            </Card>
             
             {/* Feature 5: Privacidade Total */}
-            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
+            <Card hoverable>
               <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Lock className="w-6 h-6 text-purple-400" />
               </div>
@@ -188,10 +185,10 @@ export default function LandingPage() {
               <p className="text-slate-400">
                 Tudo processado localmente. Seus dados nunca saem do seu computador
               </p>
-            </div>
+            </Card>
             
             {/* Feature 6: Sync entre dispositivos */}
-            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
+            <Card hoverable>
               <div className="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <RefreshCw className="w-6 h-6 text-pink-400" />
               </div>
@@ -199,7 +196,7 @@ export default function LandingPage() {
               <p className="text-slate-400">
                 Em breve: sincronize entre desktop e mobile
               </p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -218,12 +215,12 @@ export default function LandingPage() {
               <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-xl font-bold shadow-lg shadow-indigo-500/20">
                 1
               </div>
-              <div className="p-6 bg-slate-800 rounded-xl border border-slate-700 ml-4">
+              <Card className="ml-4">
                 <h3 className="text-xl font-semibold mb-3">Instale a extensão</h3>
                 <p className="text-slate-400">
                   Adicione ao Chrome com um click. Sem cadastro, sem configuração.
                 </p>
-              </div>
+              </Card>
             </div>
             
             {/* Step 2 */}
@@ -231,12 +228,12 @@ export default function LandingPage() {
               <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center text-xl font-bold shadow-lg shadow-purple-500/20">
                 2
               </div>
-              <div className="p-6 bg-slate-800 rounded-xl border border-slate-700 ml-4">
+              <Card className="ml-4">
                 <h3 className="text-xl font-semibold mb-3">Conecte suas fontes</h3>
                 <p className="text-slate-400">
                   Gmail, notificações do browser, clipboard — escolha de onde capturar.
                 </p>
-              </div>
+              </Card>
             </div>
             
             {/* Step 3 */}
@@ -244,12 +241,12 @@ export default function LandingPage() {
               <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center text-xl font-bold shadow-lg shadow-emerald-500/20">
                 3
               </div>
-              <div className="p-6 bg-slate-800 rounded-xl border border-slate-700 ml-4">
+              <Card className="ml-4">
                 <h3 className="text-xl font-semibold mb-3">Relaxe</h3>
                 <p className="text-slate-400">
                   Códigos são preenchidos automaticamente. Você nem percebe.
                 </p>
-              </div>
+              </Card>
             </div>
           </div>
         </div>
@@ -265,7 +262,7 @@ export default function LandingPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Free Plan */}
-            <div className="p-8 bg-slate-800 rounded-xl border border-slate-700">
+            <Card padding="lg">
               <h3 className="text-2xl font-bold mb-2">Free</h3>
               <div className="text-4xl font-bold mb-1">$0</div>
               <p className="text-slate-400 mb-6">Para sempre</p>
@@ -289,47 +286,51 @@ export default function LandingPage() {
                 </li>
               </ul>
               
-              <button className="w-full px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg border border-slate-600 transition-colors">
+              <Button variant="secondary" fullWidth>
                 Começar Grátis
-              </button>
-            </div>
+              </Button>
+            </Card>
             
             {/* Pro Plan */}
-            <div className="relative p-8 bg-slate-800 rounded-xl border-2 border-indigo-500/50 shadow-lg shadow-indigo-500/10">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-indigo-600 text-white text-sm font-semibold rounded-full">
-                Popular
-              </div>
-              
-              <h3 className="text-2xl font-bold mb-2">Pro</h3>
-              <div className="text-4xl font-bold mb-1">$4.99<span className="text-lg text-slate-400">/mês</span></div>
-              <p className="text-slate-400 mb-6">Para power users</p>
-              
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-2 text-slate-300">
-                  <span className="text-emerald-400">✓</span>
-                  Auto-fills ilimitados
-                </li>
-                <li className="flex items-center gap-2 text-slate-300">
-                  <span className="text-emerald-400">✓</span>
-                  Multi-dispositivo
-                </li>
-                <li className="flex items-center gap-2 text-slate-300">
-                  <span className="text-emerald-400">✓</span>
-                  Todas as fontes
-                </li>
-                <li className="flex items-center gap-2 text-slate-300">
-                  <span className="text-emerald-400">✓</span>
-                  Prioridade
-                </li>
-              </ul>
-              
-              <button className="w-full px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow transition-colors">
-                Upgrade Pro
-              </button>
+            <div className="relative">
+              <Card padding="lg" className="border-2 border-indigo-500/50 shadow-lg shadow-indigo-500/10">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <Badge variant="primary" size="md">
+                    Popular
+                  </Badge>
+                </div>
+                
+                <h3 className="text-2xl font-bold mb-2">Pro</h3>
+                <div className="text-4xl font-bold mb-1">$4.99<span className="text-lg text-slate-400">/mês</span></div>
+                <p className="text-slate-400 mb-6">Para power users</p>
+                
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center gap-2 text-slate-300">
+                    <span className="text-emerald-400">✓</span>
+                    Auto-fills ilimitados
+                  </li>
+                  <li className="flex items-center gap-2 text-slate-300">
+                    <span className="text-emerald-400">✓</span>
+                    Multi-dispositivo
+                  </li>
+                  <li className="flex items-center gap-2 text-slate-300">
+                    <span className="text-emerald-400">✓</span>
+                    Todas as fontes
+                  </li>
+                  <li className="flex items-center gap-2 text-slate-300">
+                    <span className="text-emerald-400">✓</span>
+                    Prioridade
+                  </li>
+                </ul>
+                
+                <Button fullWidth>
+                  Upgrade Pro
+                </Button>
+              </Card>
             </div>
             
             {/* Enterprise Plan */}
-            <div className="p-8 bg-slate-800 rounded-xl border border-slate-700">
+            <Card padding="lg">
               <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
               <div className="text-4xl font-bold mb-1">Custom</div>
               <p className="text-slate-400 mb-6">Para times</p>
@@ -353,10 +354,10 @@ export default function LandingPage() {
                 </li>
               </ul>
               
-              <button className="w-full px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg border border-slate-600 transition-colors">
+              <Button variant="secondary" fullWidth>
                 Falar com vendas
-              </button>
-            </div>
+              </Button>
+            </Card>
           </div>
         </div>
       </section>

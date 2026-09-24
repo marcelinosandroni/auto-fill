@@ -1,5 +1,8 @@
 export type Page = 'overview' | 'features' | 'design' | 'flows' | 'roadmap' | 'architecture' | 'designsystem' | 'onboarding' | 'states' | 'copy'
 
+import { Card, Badge } from '@/components/ui'
+import { Shield } from 'lucide-react'
+
 interface SidebarProps {
   currentPage: Page
   onNavigate: (page: Page) => void
@@ -26,8 +29,8 @@ export default function Sidebar({ currentPage, onNavigate }: SidebarProps) {
       {/* Logo */}
       <div className="p-6 border-b border-slate-800">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-lg shadow-lg shadow-indigo-500/20">
-            🛡️
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+            <Shield className="w-6 h-6 text-white" />
           </div>
           <div>
             <h1 className="font-bold text-sm text-white">AutoFill Guardian</h1>
@@ -38,12 +41,9 @@ export default function Sidebar({ currentPage, onNavigate }: SidebarProps) {
 
       {/* Status Badge */}
       <div className="px-4 pt-4">
-        <div className="px-3 py-2 rounded-lg bg-amber-500/10 border border-amber-500/20">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-            <span className="text-xs font-medium text-amber-400">Phase 0: Refinement</span>
-          </div>
-        </div>
+        <Badge variant="warning" dot>
+          Phase 0: Refinement
+        </Badge>
       </div>
 
       {/* Navigation */}
