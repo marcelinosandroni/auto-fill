@@ -1,20 +1,26 @@
-type Page = 'overview' | 'features' | 'design' | 'flows' | 'roadmap' | 'architecture'
+export type Page = 'overview' | 'features' | 'design' | 'flows' | 'roadmap' | 'architecture' | 'designsystem' | 'onboarding' | 'states' | 'copy'
 
 interface SidebarProps {
   currentPage: Page
   onNavigate: (page: Page) => void
 }
 
-const navItems: { id: Page; label: string; icon: string }[] = [
-  { id: 'overview', label: 'Product Overview', icon: '🎯' },
-  { id: 'features', label: 'Feature Matrix', icon: '⚡' },
-  { id: 'design', label: 'Design Preview', icon: '🎨' },
-  { id: 'flows', label: 'User Flows', icon: '🔄' },
-  { id: 'roadmap', label: 'Roadmap', icon: '🗺️' },
-  { id: 'architecture', label: 'Architecture', icon: '🏗️' },
+const navItems: { id: Page; label: string; icon: string; section?: string }[] = [
+  { id: 'overview', label: 'Product Overview', icon: '🎯', section: 'Product' },
+  { id: 'features', label: 'Feature Matrix', icon: '⚡', section: 'Product' },
+  { id: 'flows', label: 'User Flows', icon: '🔄', section: 'Product' },
+  { id: 'roadmap', label: 'Roadmap', icon: '🗺️', section: 'Product' },
+  { id: 'architecture', label: 'Architecture', icon: '🏗️', section: 'Product' },
+  { id: 'design', label: 'Design Mockups', icon: '🎨', section: 'Design' },
+  { id: 'designsystem', label: 'Design System', icon: '🧩', section: 'Design' },
+  { id: 'states', label: 'States Preview', icon: '📊', section: 'Design' },
+  { id: 'onboarding', label: 'Onboarding Flow', icon: '🎓', section: 'Design' },
+  { id: 'copy', label: 'Copy Guide', icon: '✍️', section: 'Design' },
 ]
 
 export default function Sidebar({ currentPage, onNavigate }: SidebarProps) {
+  const sections = [...new Set(navItems.map(item => item.section))]
+
   return (
     <aside className="fixed left-0 top-0 h-screen w-64 bg-slate-900 border-r border-slate-800 flex flex-col z-50">
       {/* Logo */}
@@ -41,20 +47,31 @@ export default function Sidebar({ currentPage, onNavigate }: SidebarProps) {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 p-4 space-y-1">
-        {navItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => onNavigate(item.id)}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-              currentPage === item.id
-                ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'
-                : 'text-slate-400 hover:text-white hover:bg-slate-800'
-            }`}
-          >
-            <span className="text-base">{item.icon}</span>
-            {item.label}
-          </button>
+      <nav className="flex-1 p-4 space-y-4 overflow-y-auto">
+        {sections.map((section) => (
+          <div key={section}>
+            <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 px-3">
+              {section}
+            </h3>
+            <div className="space-y-1">
+              {navItems
+                .filter(item => item.section === section)
+                .map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => onNavigate(item.id)}
+                    className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      currentPage === item.id
+                        ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'
+                        : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                    }`}
+                  >
+                    <span className="text-base">{item.icon}</span>
+                    {item.label}
+                  </button>
+                ))}
+            </div>
+          </div>
         ))}
       </nav>
 

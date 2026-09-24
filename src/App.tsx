@@ -1,13 +1,15 @@
 import { useState } from 'react'
-import Sidebar from './components/Sidebar'
+import Sidebar, { type Page } from './components/Sidebar'
 import Overview from './pages/Overview'
 import Features from './pages/Features'
 import DesignPreview from './pages/DesignPreview'
 import UserFlows from './pages/UserFlows'
 import Roadmap from './pages/Roadmap'
 import Architecture from './pages/Architecture'
-
-type Page = 'overview' | 'features' | 'design' | 'flows' | 'roadmap' | 'architecture'
+import DesignSystem from './pages/DesignSystem'
+import OnboardingFlow from './pages/OnboardingFlow'
+import StatesPreview from './pages/StatesPreview'
+import CopyPreview from './pages/CopyPreview'
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('overview')
@@ -20,6 +22,10 @@ function App() {
       case 'flows': return <UserFlows />
       case 'roadmap': return <Roadmap />
       case 'architecture': return <Architecture />
+      case 'designsystem': return <DesignSystem />
+      case 'onboarding': return <OnboardingFlow />
+      case 'states': return <StatesPreview />
+      case 'copy': return <CopyPreview />
       default: return <Overview />
     }
   }
