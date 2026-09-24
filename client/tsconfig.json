@@ -13,8 +13,8 @@
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["client/src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["client/src"]
+  "include": ["src"]
 }

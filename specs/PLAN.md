@@ -88,6 +88,7 @@ Configurar o monorepo e infraestrutura básica para começar o desenvolvimento r
 [x] - [Criar DI Container (core/di.ts + providers + hooks)](./tasks/PHASE-1/TASK-1.1.md) - CONCLUÍDO
 [x] - [Criar estrutura de pastas do client](./tasks/PHASE-1/TASK-1.2.md) - CONCLUÍDO
 [x] - [Criar Landing Page](./tasks/PHASE-1/TASK-1.3.md) - CONCLUÍDO
+[x] - [Mover UI para client/ e implementar backend](./tasks/PHASE-1/TASK-1.11.md) - CONCLUÍDO
 [-] - [Criar Chrome Extension boilerplate](./tasks/PHASE-1/TASK-1.4.md) - EM PROGRESSO
 [ ] - [Criar Popup da extensão (React)](./tasks/PHASE-1/TASK-1.5.md) - fazer
 [ ] - [Criar Content Script (detecção de campos OTP)](./tasks/PHASE-1/TASK-1.6.md) - fazer
