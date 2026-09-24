@@ -1,0 +1,11 @@
+{
+  "name": "autofill-guardian-extension",
+  "version": "0.1.0",
+  "description": "AutoFill Guardian Chrome Extension",
+  "scripts": {
+    "generate-icons": "node generate-icons.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.2"
+  }
+}

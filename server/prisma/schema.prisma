@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String
+  plan      Plan     @default(FREE)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  captures  Capture[]
+  
+  @@map("users")
+}
+
+model Capture {
+  id           String      @id @default(uuid())
+  code         String
+  source       Source
+  sourceDetail String
+  type         CaptureType @default(OTP)
+  capturedAt   DateTime    @default(now())
+  expiresAt    DateTime?
+  usedAt       DateTime?
+  site         String?
+  
+  userId       String
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+  @@index([capturedAt])
+  @@map("captures")
+}
+
+enum Plan {
+  FREE
+  PRO
+  ENTERPRISE
+}
+
+enum Source {
+  NOTIFICATION
+  EMAIL
+  CLIPBOARD
+}
+
+enum CaptureType {
+  OTP
+  TOKEN
+  LINK
+  PASSWORD
+}
