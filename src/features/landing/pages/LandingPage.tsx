@@ -1,58 +1,133 @@
-import { Shield, Bell, Zap, Lock, Mail, RefreshCw, ArrowRight, Chrome } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Shield, Bell, Zap, Lock, Mail, RefreshCw, Chrome, ArrowRight } from 'lucide-react'
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
+    <div className="min-h-screen bg-slate-900 text-slate-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/20 via-slate-950 to-slate-950" />
+        {/* Background: gradiente escuro com partículas sutis */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-indigo-950/20 to-slate-900" />
         
-        {/* Subtle particles */}
+        {/* Partículas sutis */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/3 rounded-full blur-3xl" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
-          <div className="text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-8">
-              <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-sm text-indigo-300">Chrome Extension</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Content */}
+            <div className="text-center lg:text-left">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-8">
+                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-sm text-indigo-300">Chrome Extension</span>
+              </div>
+              
+              {/* Headline */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Nunca mais perca um
+                <br />
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-emerald-400">
+                  código OTP
+                </span>
+              </h1>
+              
+              {/* Subheadline */}
+              <p className="text-xl text-slate-400 mb-10 leading-relaxed">
+                AutoFill Guardian captura e preenche automaticamente códigos de verificação do seu email, notificações e browser.
+              </p>
+              
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 lg:justify-start justify-center">
+                <button className="group px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-lg shadow-indigo-500/20 transition-all flex items-center gap-3">
+                  <Chrome className="w-5 h-5" />
+                  Instalar no Chrome
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="px-8 py-4 text-slate-300 hover:text-white font-semibold rounded-lg border border-slate-700 hover:border-slate-600 hover:bg-slate-800 transition-all">
+                  Ver como funciona
+                </button>
+              </div>
             </div>
             
-            {/* Headline */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Nunca mais perca um
-              <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-emerald-400">
-                código OTP
-              </span>
-            </h1>
-            
-            {/* Subheadline */}
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-              AutoFill Guardian captura e preenche automaticamente códigos de verificação 
-              do seu email, notificações e browser. Como o autofill do Android, mas para desktop.
-            </p>
-            
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="group px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/20 transition-all flex items-center gap-3">
-                <Chrome className="w-5 h-5" />
-                Instalar Grátis no Chrome
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="px-8 py-4 text-slate-300 hover:text-white font-semibold rounded-xl border border-slate-700 hover:border-slate-600 transition-all">
-                Ver como funciona →
-              </button>
+            {/* Right: Mockup da extensão */}
+            <div className="relative">
+              <div className="relative w-[350px] mx-auto">
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-indigo-500/20 rounded-2xl blur-2xl" />
+                
+                {/* Extension popup mockup */}
+                <div className="relative bg-slate-800 rounded-2xl border border-slate-700 shadow-2xl overflow-hidden">
+                  {/* Header */}
+                  <div className="p-4 bg-gradient-to-r from-indigo-600 to-purple-600">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Shield className="w-6 h-6 text-white" />
+                        <span className="font-bold text-white">AutoFill Guardian</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="text-xs text-emerald-200">Monitorando</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Stats */}
+                  <div className="grid grid-cols-3 gap-px bg-slate-700">
+                    <div className="bg-slate-800 p-3 text-center">
+                      <div className="text-lg font-bold text-indigo-400">12</div>
+                      <div className="text-xs text-slate-400">Hoje</div>
+                    </div>
+                    <div className="bg-slate-800 p-3 text-center">
+                      <div className="text-lg font-bold text-emerald-400">98%</div>
+                      <div className="text-xs text-slate-400">Sucesso</div>
+                    </div>
+                    <div className="bg-slate-800 p-3 text-center">
+                      <div className="text-lg font-bold text-amber-400">3</div>
+                      <div className="text-xs text-slate-400">Fontes</div>
+                    </div>
+                  </div>
+                  
+                  {/* Captures */}
+                  <div className="p-3 space-y-2">
+                    <div className="text-xs font-medium text-slate-400 mb-2">Últimas Capturas</div>
+                    {[
+                      { icon: '📧', from: 'Google', code: '••••••', time: '2 min', used: true },
+                      { icon: '🔔', from: 'Slack', code: '••••••', time: '15 min', used: false },
+                      { icon: '📋', from: 'Clipboard', code: '••••••', time: '1h', used: true },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 p-2.5 rounded-lg bg-slate-900 border border-slate-700 hover:border-indigo-500/30 transition-all">
+                        <span className="text-base">{item.icon}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-xs font-medium text-white truncate">{item.from}</div>
+                          <div className="font-mono text-xs text-slate-400">{item.code}</div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-xs text-slate-500">{item.time}</div>
+                          {item.used && <span className="text-xs text-emerald-400">✓</span>}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Footer */}
+                  <div className="p-3 border-t border-slate-700 flex items-center justify-between">
+                    <button className="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                      ⚙️ Settings
+                    </button>
+                    <button className="px-3 py-1.5 text-xs font-medium bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors">
+                      Dashboard
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-slate-900/50">
+      <section className="py-20 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Tudo que você precisa</h2>
@@ -60,8 +135,8 @@ export default function LandingPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Feature 1 */}
-            <div className="group p-6 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition-all">
+            {/* Feature 1: Captura Inteligente */}
+            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
               <div className="w-12 h-12 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Bell className="w-6 h-6 text-indigo-400" />
               </div>
@@ -71,8 +146,8 @@ export default function LandingPage() {
               </p>
             </div>
             
-            {/* Feature 2 */}
-            <div className="group p-6 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition-all">
+            {/* Feature 2: Auto-Fill Instantâneo */}
+            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
               <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Zap className="w-6 h-6 text-emerald-400" />
               </div>
@@ -82,30 +157,8 @@ export default function LandingPage() {
               </p>
             </div>
             
-            {/* Feature 3 */}
-            <div className="group p-6 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Lock className="w-6 h-6 text-purple-400" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">100% Privado</h3>
-              <p className="text-slate-400">
-                Tudo processado localmente. Seus dados nunca saem do seu computador
-              </p>
-            </div>
-            
-            {/* Feature 4 */}
-            <div className="group p-6 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Mail className="w-6 h-6 text-amber-400" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Multi-Source</h3>
-              <p className="text-slate-400">
-                Gmail, Outlook, notificações do browser, clipboard — tudo em um lugar
-              </p>
-            </div>
-            
-            {/* Feature 5 */}
-            <div className="group p-6 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition-all">
+            {/* Feature 3: Histórico Seguro */}
+            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
               <div className="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Shield className="w-6 h-6 text-cyan-400" />
               </div>
@@ -115,12 +168,34 @@ export default function LandingPage() {
               </p>
             </div>
             
-            {/* Feature 6 */}
-            <div className="group p-6 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition-all">
+            {/* Feature 4: Multi-Source */}
+            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Mail className="w-6 h-6 text-amber-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Multi-Source</h3>
+              <p className="text-slate-400">
+                Gmail, Outlook, notificações do browser, clipboard — tudo em um lugar
+              </p>
+            </div>
+            
+            {/* Feature 5: Privacidade Total */}
+            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Lock className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Privacidade Total</h3>
+              <p className="text-slate-400">
+                Tudo processado localmente. Seus dados nunca saem do seu computador
+              </p>
+            </div>
+            
+            {/* Feature 6: Sync entre dispositivos */}
+            <div className="group p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
               <div className="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <RefreshCw className="w-6 h-6 text-pink-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Sync Futuro</h3>
+              <h3 className="text-xl font-semibold mb-2">Sync entre dispositivos</h3>
               <p className="text-slate-400">
                 Em breve: sincronize entre desktop e mobile
               </p>
@@ -140,39 +215,39 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Step 1 */}
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-xl font-bold">
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-xl font-bold shadow-lg shadow-indigo-500/20">
                 1
               </div>
-              <div className="p-6 bg-slate-800/50 rounded-xl border border-slate-700/50 ml-4">
-                <h3 className="text-xl font-semibold mb-3">Instale em 5 segundos</h3>
+              <div className="p-6 bg-slate-800 rounded-xl border border-slate-700 ml-4">
+                <h3 className="text-xl font-semibold mb-3">Instale a extensão</h3>
                 <p className="text-slate-400">
-                  Adicione a extensão ao Chrome com um click. Sem cadastro, sem configuração.
+                  Adicione ao Chrome com um click. Sem cadastro, sem configuração.
                 </p>
               </div>
             </div>
             
             {/* Step 2 */}
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center text-xl font-bold">
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center text-xl font-bold shadow-lg shadow-purple-500/20">
                 2
               </div>
-              <div className="p-6 bg-slate-800/50 rounded-xl border border-slate-700/50 ml-4">
+              <div className="p-6 bg-slate-800 rounded-xl border border-slate-700 ml-4">
                 <h3 className="text-xl font-semibold mb-3">Conecte suas fontes</h3>
                 <p className="text-slate-400">
-                  Escolha de onde capturar códigos: Gmail, notificações do browser, clipboard.
+                  Gmail, notificações do browser, clipboard — escolha de onde capturar.
                 </p>
               </div>
             </div>
             
             {/* Step 3 */}
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center text-xl font-bold">
+              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center text-xl font-bold shadow-lg shadow-emerald-500/20">
                 3
               </div>
-              <div className="p-6 bg-slate-800/50 rounded-xl border border-slate-700/50 ml-4">
-                <h3 className="text-xl font-semibold mb-3">Relaxe e trabalhe</h3>
+              <div className="p-6 bg-slate-800 rounded-xl border border-slate-700 ml-4">
+                <h3 className="text-xl font-semibold mb-3">Relaxe</h3>
                 <p className="text-slate-400">
-                  Códigos são capturados e preenchidos automaticamente. Você nem percebe.
+                  Códigos são preenchidos automaticamente. Você nem percebe.
                 </p>
               </div>
             </div>
@@ -181,7 +256,7 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-slate-900/50">
+      <section className="py-20 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Preços simples</h2>
@@ -190,7 +265,7 @@ export default function LandingPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Free Plan */}
-            <div className="p-8 bg-slate-800/50 rounded-xl border border-slate-700/50">
+            <div className="p-8 bg-slate-800 rounded-xl border border-slate-700">
               <h3 className="text-2xl font-bold mb-2">Free</h3>
               <div className="text-4xl font-bold mb-1">$0</div>
               <p className="text-slate-400 mb-6">Para sempre</p>
@@ -198,19 +273,15 @@ export default function LandingPage() {
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-2 text-slate-300">
                   <span className="text-emerald-400">✓</span>
-                  50 auto-fills por dia
-                </li>
-                <li className="flex items-center gap-2 text-slate-300">
-                  <span className="text-emerald-400">✓</span>
-                  2 fontes
-                </li>
-                <li className="flex items-center gap-2 text-slate-300">
-                  <span className="text-emerald-400">✓</span>
-                  Histórico 7 dias
+                  50 auto-fills/dia
                 </li>
                 <li className="flex items-center gap-2 text-slate-300">
                   <span className="text-emerald-400">✓</span>
                   1 dispositivo
+                </li>
+                <li className="flex items-center gap-2 text-slate-300">
+                  <span className="text-emerald-400">✓</span>
+                  2 fontes
                 </li>
                 <li className="flex items-center gap-2 text-slate-500">
                   <span>✗</span>
@@ -218,20 +289,20 @@ export default function LandingPage() {
                 </li>
               </ul>
               
-              <button className="w-full px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-colors">
+              <button className="w-full px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg border border-slate-600 transition-colors">
                 Começar Grátis
               </button>
             </div>
             
             {/* Pro Plan */}
-            <div className="relative p-8 bg-slate-800/50 rounded-xl border-2 border-indigo-500/50 shadow-lg shadow-indigo-500/10">
+            <div className="relative p-8 bg-slate-800 rounded-xl border-2 border-indigo-500/50 shadow-lg shadow-indigo-500/10">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-indigo-600 text-white text-sm font-semibold rounded-full">
                 Popular
               </div>
               
               <h3 className="text-2xl font-bold mb-2">Pro</h3>
-              <div className="text-4xl font-bold mb-1">$4.99</div>
-              <p className="text-slate-400 mb-6">por mês</p>
+              <div className="text-4xl font-bold mb-1">$4.99<span className="text-lg text-slate-400">/mês</span></div>
+              <p className="text-slate-400 mb-6">Para power users</p>
               
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-2 text-slate-300">
@@ -240,49 +311,41 @@ export default function LandingPage() {
                 </li>
                 <li className="flex items-center gap-2 text-slate-300">
                   <span className="text-emerald-400">✓</span>
+                  Multi-dispositivo
+                </li>
+                <li className="flex items-center gap-2 text-slate-300">
+                  <span className="text-emerald-400">✓</span>
                   Todas as fontes
                 </li>
                 <li className="flex items-center gap-2 text-slate-300">
                   <span className="text-emerald-400">✓</span>
-                  Histórico ilimitado
-                </li>
-                <li className="flex items-center gap-2 text-slate-300">
-                  <span className="text-emerald-400">✓</span>
-                  3 dispositivos
-                </li>
-                <li className="flex items-center gap-2 text-slate-300">
-                  <span className="text-emerald-400">✓</span>
-                  Cross-device sync
+                  Prioridade
                 </li>
               </ul>
               
-              <button className="w-full px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-colors">
+              <button className="w-full px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow transition-colors">
                 Upgrade Pro
               </button>
             </div>
             
             {/* Enterprise Plan */}
-            <div className="p-8 bg-slate-800/50 rounded-xl border border-slate-700/50">
+            <div className="p-8 bg-slate-800 rounded-xl border border-slate-700">
               <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
               <div className="text-4xl font-bold mb-1">Custom</div>
-              <p className="text-slate-400 mb-6">Entre em contato</p>
+              <p className="text-slate-400 mb-6">Para times</p>
               
               <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-2 text-slate-300">
-                  <span className="text-emerald-400">✓</span>
-                  Tudo do Pro
-                </li>
                 <li className="flex items-center gap-2 text-slate-300">
                   <span className="text-emerald-400">✓</span>
                   API access
                 </li>
                 <li className="flex items-center gap-2 text-slate-300">
                   <span className="text-emerald-400">✓</span>
-                  Dispositivos ilimitados
+                  SSO
                 </li>
                 <li className="flex items-center gap-2 text-slate-300">
                   <span className="text-emerald-400">✓</span>
-                  SSO / SAML
+                  Audit logs
                 </li>
                 <li className="flex items-center gap-2 text-slate-300">
                   <span className="text-emerald-400">✓</span>
@@ -290,7 +353,7 @@ export default function LandingPage() {
                 </li>
               </ul>
               
-              <button className="w-full px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-colors">
+              <button className="w-full px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg border border-slate-600 transition-colors">
                 Falar com vendas
               </button>
             </div>
@@ -317,6 +380,15 @@ export default function LandingPage() {
               <a href="#" className="hover:text-white transition-colors">Terms</a>
               <a href="#" className="hover:text-white transition-colors">Support</a>
               <a href="#" className="hover:text-white transition-colors">Blog</a>
+            </div>
+            
+            <div className="flex items-center gap-4">
+              <a href="#" className="text-slate-400 hover:text-white transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+              </a>
+              <a href="#" className="text-slate-400 hover:text-white transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
             </div>
             
             <div className="text-sm text-slate-500">
