@@ -80,14 +80,13 @@ Refinar o produto, criar artifacts visuais, definir specs detalhadas antes de qu
 
 ---
 
-## Próxima Fase: 1 - Foundation
+## Fase atual: 1 - Foundation 🏗️
 
 ### Objetivo
 Configurar o monorepo e infraestrutura básica para começar o desenvolvimento real.
 
-### Tasks Planejadas
+[x] - [Criar DI Container (core/di.ts + providers + hooks)](./tasks/PHASE-1/TASK-1.1.md) - CONCLUÍDO
 [ ] - Setup do monorepo com workspaces
-[ ] - Configuração do Vite + React + Tailwind no client
 [ ] - Configuração do Node.js + Express no server
 [ ] - Configuração do Chrome Extension boilerplate
 [ ] - CI/CD básico (GitHub Actions)
