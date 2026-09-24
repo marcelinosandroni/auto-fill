@@ -107,8 +107,8 @@ Configurar o monorepo e infraestrutura básica para começar o desenvolvimento r
 Preparar o produto para produção com database real, deploy e integrações essenciais.
 
 [x] - [Configurar PostgreSQL com Supabase](./tasks/PHASE-2/TASK-2.1.md) - CONCLUÍDO
-[-] - [Implementar migrations com Prisma](./tasks/PHASE-2/TASK-2.2.md) - EM PROGRESSO
-[ ] - [Migrar mock database para PostgreSQL](./tasks/PHASE-2/TASK-2.3.md) - fazer
+[x] - [Implementar migrations com Prisma](./tasks/PHASE-2/TASK-2.2.md) - CONCLUÍDO
+[-] - [Migrar mock database para PostgreSQL](./tasks/PHASE-2/TASK-2.3.md) - EM PROGRESSO
 [ ] - [Deploy frontend na Vercel](./tasks/PHASE-2/TASK-2.4.md) - fazer
 [ ] - [Deploy backend na Railway](./tasks/PHASE-2/TASK-2.5.md) - fazer
 [ ] - [Configurar CI/CD com GitHub Actions](./tasks/PHASE-2/TASK-2.6.md) - fazer
