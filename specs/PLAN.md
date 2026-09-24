@@ -89,13 +89,33 @@ Configurar o monorepo e infraestrutura básica para começar o desenvolvimento r
 [x] - [Criar estrutura de pastas do client](./tasks/PHASE-1/TASK-1.2.md) - CONCLUÍDO
 [x] - [Criar Landing Page](./tasks/PHASE-1/TASK-1.3.md) - CONCLUÍDO
 [x] - [Mover UI para client/ e implementar backend](./tasks/PHASE-1/TASK-1.11.md) - CONCLUÍDO
-[-] - [Criar Chrome Extension boilerplate](./tasks/PHASE-1/TASK-1.4.md) - EM PROGRESSO
-[ ] - [Criar Popup da extensão (React)](./tasks/PHASE-1/TASK-1.5.md) - fazer
-[ ] - [Criar Content Script (detecção de campos OTP)](./tasks/PHASE-1/TASK-1.6.md) - fazer
-[ ] - [Criar Background Service Worker](./tasks/PHASE-1/TASK-1.7.md) - fazer
-[ ] - [Criar Dashboard básico](./tasks/PHASE-1/TASK-1.8.md) - fazer
-[ ] - [Criar API básica](./tasks/PHASE-1/TASK-1.9.md) - fazer
-[ ] - [Integrar tudo e testar](./tasks/PHASE-1/TASK-1.10.md) - fazer
+[x] - [Criar Chrome Extension boilerplate](./tasks/PHASE-1/TASK-1.4.md) - CONCLUÍDO
+[x] - [Criar Popup da extensão (React)](./tasks/PHASE-1/TASK-1.5.md) - CONCLUÍDO
+[x] - [Criar Content Script (detecção de campos OTP)](./tasks/PHASE-1/TASK-1.6.md) - CONCLUÍDO
+[x] - [Criar Background Service Worker](./tasks/PHASE-1/TASK-1.7.md) - CONCLUÍDO
+[x] - [Criar Dashboard básico](./tasks/PHASE-1/TASK-1.8.md) - CONCLUÍDO
+[x] - [Criar API básica](./tasks/PHASE-1/TASK-1.9.md) - CONCLUÍDO
+[x] - [Integrar tudo e testar](./tasks/PHASE-1/TASK-1.10.md) - CONCLUÍDO
+
+### Status: ✅ FASE 1 CONCLUÍDA
+
+---
+
+## Fase 2: Production Ready 🚀
+
+### Objetivo
+Preparar o produto para produção com database real, deploy e integrações essenciais.
+
+[ ] - [Configurar PostgreSQL com Supabase](./tasks/PHASE-2/TASK-2.1.md) - fazer
+[ ] - [Implementar migrations com Prisma](./tasks/PHASE-2/TASK-2.2.md) - fazer
+[ ] - [Migrar mock database para PostgreSQL](./tasks/PHASE-2/TASK-2.3.md) - fazer
+[ ] - [Deploy frontend na Vercel](./tasks/PHASE-2/TASK-2.4.md) - fazer
+[ ] - [Deploy backend na Railway](./tasks/PHASE-2/TASK-2.5.md) - fazer
+[ ] - [Configurar CI/CD com GitHub Actions](./tasks/PHASE-2/TASK-2.6.md) - fazer
+[ ] - [Integrar Gmail API (OAuth2)](./tasks/PHASE-2/TASK-2.7.md) - fazer
+[ ] - [Implementar Stripe para pagamentos](./tasks/PHASE-2/TASK-2.8.md) - fazer
+[ ] - [Publicar Chrome Extension na Web Store](./tasks/PHASE-2/TASK-2.9.md) - fazer
+[ ] - [Configurar monitoring (Sentry + Plausible)](./tasks/PHASE-2/TASK-2.10.md) - fazer
 
 ---
 

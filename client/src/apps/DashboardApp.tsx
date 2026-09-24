@@ -2,43 +2,33 @@ import { useState } from 'react'
 import { Routes, Route, Link, useLocation, Navigate } from 'react-router-dom'
 import { Card, Button, Badge } from '@/components/ui'
 import { Shield, LayoutDashboard, History, Link2, Settings, LogOut, User } from 'lucide-react'
-
-// Mock auth state
-const useAuth = () => {
-  const [user, setUser] = useState<{ email: string; name: string; plan: string } | null>(
-    () => JSON.parse(localStorage.getItem('user') || 'null')
-  )
-
-  const login = (email: string, password: string) => {
-    // Mock login
-    const userData = { email, name: email.split('@')[0], plan: 'free' }
-    localStorage.setItem('user', JSON.stringify(userData))
-    setUser(userData)
-    return true
-  }
-
-  const logout = () => {
-    localStorage.removeItem('user')
-    setUser(null)
-  }
-
-  return { user, login, logout }
-}
+import { useAuth } from '@/hooks/useAuth'
 
 function LoginPage() {
   const { login } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email || !password) {
       setError('Preencha todos os campos')
       return
     }
-    login(email, password)
-    window.location.href = '/dashboard'
+    
+    setLoading(true)
+    setError('')
+    
+    try {
+      await login(email, password)
+      window.location.href = '/dashboard'
+    } catch (err) {
+      setError('Credenciais inválidas. Tente novamente.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -76,7 +66,7 @@ function LoginPage() {
             />
           </div>
           {error && <p className="text-xs text-red-400">{error}</p>}
-          <Button type="submit" fullWidth>Entrar</Button>
+          <Button type="submit" fullWidth loading={loading}>Entrar</Button>
         </form>
 
         <p className="text-xs text-slate-500 text-center mt-4">
