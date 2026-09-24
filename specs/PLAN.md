@@ -86,13 +86,15 @@ Refinar o produto, criar artifacts visuais, definir specs detalhadas antes de qu
 Configurar o monorepo e infraestrutura básica para começar o desenvolvimento real.
 
 [x] - [Criar DI Container (core/di.ts + providers + hooks)](./tasks/PHASE-1/TASK-1.1.md) - CONCLUÍDO
-[ ] - Setup do monorepo com workspaces
-[ ] - Configuração do Node.js + Express no server
-[ ] - Configuração do Chrome Extension boilerplate
-[ ] - CI/CD básico (GitHub Actions)
-[ ] - Setup do Supabase (database + auth)
-[ ] - Configuração do Sentry (error tracking)
-[ ] - Configuração do Plausible (analytics)
+[x] - [Criar estrutura de pastas do client](./tasks/PHASE-1/TASK-1.2.md) - CONCLUÍDO
+[-] - [Criar Landing Page](./tasks/PHASE-1/TASK-1.3.md) - EM PROGRESSO
+[ ] - [Criar Chrome Extension boilerplate](./tasks/PHASE-1/TASK-1.4.md) - fazer
+[ ] - [Criar Popup da extensão (React)](./tasks/PHASE-1/TASK-1.5.md) - fazer
+[ ] - [Criar Content Script (detecção de campos OTP)](./tasks/PHASE-1/TASK-1.6.md) - fazer
+[ ] - [Criar Background Service Worker](./tasks/PHASE-1/TASK-1.7.md) - fazer
+[ ] - [Criar Dashboard básico](./tasks/PHASE-1/TASK-1.8.md) - fazer
+[ ] - [Criar API básica](./tasks/PHASE-1/TASK-1.9.md) - fazer
+[ ] - [Integrar tudo e testar](./tasks/PHASE-1/TASK-1.10.md) - fazer
 
 ---
 
