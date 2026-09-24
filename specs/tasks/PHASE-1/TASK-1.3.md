@@ -14,17 +14,17 @@
 Criar Landing Page completa seguindo DESIGN.md: Hero, Features, How It Works, Pricing, Footer
 
 ## 🛠️ Micro-Passos (Checklist Dopamina)
-- [ ] Passo 1: Criar src/features/landing/pages/LandingPage.tsx
-- [ ] Passo 2: Criar Hero Section com gradiente e CTAs
-- [ ] Passo 3: Criar Features Section (grid 3 colunas)
-- [ ] Passo 4: Criar How It Works Section (3 passos)
-- [ ] Passo 5: Criar Pricing Section (Free/Pro/Enterprise)
-- [ ] Passo 6: Criar Footer com links
-- [ ] Passo 7: Integrar no App.tsx com rota
-- [ ] Passo 8: Testar build e visual
+- [x] Passo 1: Criar src/features/landing/pages/LandingPage.tsx ✅
+- [x] Passo 2: Criar Hero Section com gradiente e CTAs ✅
+- [x] Passo 3: Criar Features Section (grid 3 colunas) ✅
+- [x] Passo 4: Criar How It Works Section (3 passos) ✅
+- [x] Passo 5: Criar Pricing Section (Free/Pro/Enterprise) ✅
+- [x] Passo 6: Criar Footer com links ✅
+- [x] Passo 7: Integrar no App.tsx com rota ✅
+- [x] Passo 8: Testar build e visual ✅
 
 ## 🏁 Definition of Done (Critério de Sucesso)
-- [ ] Landing Page completa e funcional
-- [ ] Segue DESIGN.md (cores, tipografia, componentes)
-- [ ] Responsivo (mobile-first)
-- [ ] Build passa sem erros
+- [x] Landing Page completa e funcional ✅
+- [x] Segue DESIGN.md (cores, tipografia, componentes) ✅
+- [x] Responsivo (mobile-first) ✅
+- [x] Build passa sem erros ✅
